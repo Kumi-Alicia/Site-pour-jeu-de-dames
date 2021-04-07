@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Code d'un jeu de Dames</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+  </head>
+  <body>
+    <section class="top-page">
+      <div class="top-page">
+      <header>
+        <nav>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="regle.html">Les Règles</a></li>
+            <li><a href="conception.html">La Conception du code</a></li>
+            <li><a href="contact.html">Les contacts</a></li>
+            <li><a href="mentions.html">Les mentions légales</a></li>
+        </nav>
+      </header>
+    </div>
+    </section>
+    <div class="landing-page">
+      <article>
+        <h1>Jeu de Dames en Python</h1>
+        <p>
+            Réalisé par Alicia Ghanem et Tristan Rebeyrol</br>
+            De mars à avril 2021 dans le cadre du projet Python</br>
+            A l'Université de Champollion à Albi</br>
+        </p>
+      </article>
+      <aside>
+        <img src="image/damier.png" alt="Damier du code">
+      </aside>
+      </div>
+    <section class="histoire">
+      <div class="type_partie1">
+        <aside>
+          <img src="image/Papyrus.jpg" alt="Image du Papyrus">
+        </aside>
+      <article>
+        <h1>L'histoire du Jeu</h1>
+        <p>
+            Les débuts du Jeu de Dames (ou de prises par sauts) sont lointains.</br> Les archéologues ont retrouvé des restes de tabliers de jeux, creusés dans la pierre ou le sol.</br>
+            Le jeu à 4x4 cupules de Slatino en Bulgarie (4500 avant JC).</br>  
+            Le jeu à 5x5 cupules dans le sud-Oranais (4000 avant JC). </br> 
+            Des jeux à 2x6 pions en Arabie et Moyen-Orient (1400 avant JC). </br>
+            Des jeux égyptiens à 7x7 cupules (1400 avant JC).</br>
+            Des jeux à 7x7, 7x8 etc. cupules en Nabatéen (Jordanie) à l'époque romaine.</br>
+            Le jeu égyptien à 5x5 lignes (plus des diagonales inachevées) du temple de Kurama à Louxor en Egypte (datant de vers 300-600 après JC).</br>
+            Par la suite, c'est dans les pays musulmans et en Inde qu'on retrouve des jeux qui sont les ancêtres directs de l'actuel Jeu de Dames européen. Comme dans ce dernier, les prises se font en sautant par dessus un pion adverse...
+        </p>
+      </article>
+      </div>
+      <div class="type_partie2">
+        <aside>
+          <img src="image/alquerque.jpg" alt="Image du alquerque">
+        </aside>
+        <article>
+          <p>
+            Par la suite, c'est dans les pays musulmans et en Inde qu'on retrouve des jeux qui sont les ancêtres directs de l'actuel Jeu de Dames européen.</br>
+            Comme dans ce dernier, les prises se font en sautant par dessus un pion adverse...</br>
+            Vers le Xème siècle, le jeu arabe de Quirat est introduit en Espagne.</br>
+            Il sera connu sous le nom d'<strong>Alquerque</strong> dans le <strong>Livre des jeux</strong>  d'Alphonse le sage, vers 1283.</br>
+            On l'appellera aussi Alquerque de doce (Alquerque de douze) car chaque adversaire y joue avec 12 pions.</br>
+            Vers 1429, en Castille, est connue une autre version : l'Alquerque Anda raya où 2 fois 12 pions s'affrontent sur un plateau ne contenant que des lignes obliques.</br>
+            Les Espagnols apporteront ce jeu aux Philippines où il deviendra le jeu de Dana.</br>	 	
+            Vers 1492, en Espagne, l'Alquerque Anda raya est remplacé par le "Jeu de Dames"  où 2x12 pions s'affrontent sur un plateau de 64 cases en se déplaçant obliquement. 
+          </p>
+        </article>
+      </div>
+      <div class="type_partie3">
+        <article>
+          <p>
+            Vers 1631, ce jeu porte le nom de <strong>Jeu des marelles</strong> en français,<strong>Damspiel</strong> Jeu de Dames en Allemand,<strong>Giuoco di dama</strong> Jeu de Dames en italien et<strong>Scruporum ludus</strong> en latin.</br>
+            Vers 1696, aux Pays bas, apparait une nouvelle version de ce jeu de Dame employant 2x20 pions sur 100 cases.</br> On appellera plus tard ce jeu <strong>Dames polonaises</strong> et on prétendra qu'il est apparu en France en 1723. </br>
+            On doit à Josep BRUNET Y BELLET, l’hypothèse la plus crédible quant à la naissance des dames : celles-ci seraient nées au Moyen-âge de la transposition du jeu alquerque de doce ("marelle de douze") sur un échiquier.</br> Par là, l’érudit catalan s’opposait à ceux qui voyaient dans les dames une simplification des échecs.</br> Le grand historien des échecs Harold MURRAY devait par la suite adopter ce point de vue en y greffant ses propres trouvailles. </br>
+            Il affirme que le jeu est né au XIIe siècle, probablement dans le sud de la France, cette localisation est aujourd’hui contestée.
+          </p>
+        </article>
+      </div>
+      <div class="type_partie1">
+        <aside>
+          <img src="image/_jeu_de_dames__mm882t.jpg" alt="tableau dames espagne">
+        </aside>
+        <article>
+          <p>
+            Les regards se tournent donc à nouveau vers l’Espagne, où nous trouvons l’ancêtre présumé des dames, le jeu <strong>alquerque de doce</strong>, décrit et illustré dans le fameux <strong>Livre des jeux</strong> du Roi Alphonse X.</br> 
+            Hors d’Espagne, les textes restent très discrets, mais plusieurs diagrammes bien reconnaissables de marelles de douze ont été relevés ici et là - en Angleterre, en Italie et même en France.</br> 
+            Certains d’entre eux peuvent être datés du Moyen-âge, révélant ainsi la diffusion du jeu.</br>
+            On peut difficilement comprendre l’histoire des dames sans évoquer celle des échecs.</br> 
+            En effet, outre la réutilisation de l’échiquier, le jeu de dames emploie plusieurs termes que l’on retrouve aussi dans le vocabulaire des échecs : pion, dame, le verbe damer (transformer un pion en dame).</br> 
+            Et, si la marche du jeu et le mode de capture sont entièrement différents, les déplacements de la dame dans le jeu actuel ne sont pas sans évoquer ceux du fou aux échecs. </br>  
+            Or, aux échecs, ces possibilités accrues de mouvements n’ont été introduites qu’à la fin du Moyen-âge. Jusque-là, la dame se déplaçait de case en case, ce qui rendait le jeu très lent.
+          </p>
+        </article>
+      </div>
+      <div class="type_partie2">
+        <aside>
+          <img src="image/250px-Boilly-Checkers-1803__mm88c5.jpg" alt="tableau dames">
+        </aside>
+        <article>
+          <p>
+            Ces règles, héritées des Arabes et des Persans, qui les tenaient de l’Inde, furent modifiées en Europe vers 1475-1485, comme l’a montré Harold MURRAY dans son histoire des échecs (A history of chess, 1913).</br> 
+            C’est donc manifestement à la même source que les échecs ont puisé leurs améliorations, et les dames leurs règles.</br> 
+            Or on pense que les échecs "renouvelés" ont pris naissance dans la péninsule Ibérique.</br> 
+            Du coup, l’hypothèse d’une origine espagnole des dames se trouve renforcée.
+          </p>
+        </article>
+      </div>
+      <div class="type_partie3">
+        
+        <article>
+          <h2>
+               Comment et quand est-on passé du damier à 64 cases au damier à 100 cases, longtemps nommé Dames à la polonaise.
+          </h2>
+          <p>
+            Malgré son jeune âge, la naissance du nouveau jeu est loin d’être claire.</br>
+            Le premier à s’être penché sur les origines du jeu "international" est Charles-Marie de La CONDAMINE, savant et académicien, dans un article paru en juillet 1770.</br>
+            Cette petite enquête avait permis de lever un doute : malgré son nom, le nouveau jeu à 100 cases n’était pas né en Pologne puisque, là-bas, on le nommait... jeu "à la française".</br>
+            En outre, dans un Essai sur le jeu de dames à la polonaise, paru en 1770, un cafetier nommé MANOURY, affirmait, comme La CONDAMINE, que le jeu était arrivé à Paris vers 1725-1730.MANOURY publia en 1787 une nouvelle édition de son livre, intitulée « Le jeu de dames à la polonaise ou Traité historique de ce jeu, sa marche, ses règles, leur explication... » </br>
+            Il y explique que le nouveau jeu avait été inventé sous la Régence, donc entre 1715 et 1723, par un "étranger qu’on appelait dans le palais le Polonais, soit qu’il fût effectivement de Pologne, soit que la façon de se mettre lui eût fait donner ce titre, sous lequel seul il était connu.
+          </p>
+        </article>
+      </div>
+      <div class="type_partie1">
+        <aside>
+          <img src="image/joueurs_de_dames__mm88ps.jpg" alt="status joeuurs de dames">
+        </aside>
+        <article>
+          <p>
+            Mais deux découvertes viennent perturber ces explications un peu trop faciles. Celle, d’abord, d’un damier à 100 cases daté 1696, conservé dans un musée à Hoorn aux Pays-Bas, puis d’un autre damier semblable, portant la date 1710. </br>
+            Enfin, le coup de grâce semble asséné par le dictionnaire français-néerlandais de Pierre MARIN,  (Amsterdam, 1710), qui donne l’expression "damer à la polonaise".</br>
+            Certains en déduisent que le jeu international serait né aux Pays-Bas, avant la fin du XVIIe siècle. Ses règles viendraient du jeu espagnol - la dame "longue" - et de quelques aménagements supplémentaires.</br>
+            Mais il est certain que c’est en France que le nouveau jeu a trouvé son terrain d’élection au point d’y évincer rapidement l’ancien jeu.</br>
+            Celui-ci semble avoir été définitivement abandonné dès les années 1770-1780. Joseph MERY, dans son Arbitre des jeux (1847), le confirme dans les brèves lignes allouées à l’ancien jeu français : "cette manière de jouer aux dames est beaucoup moins agréable que la précédente : aussi ne le joue-t-on plus depuis plus de soixante ans...", soit vers 1785.</br>
+            Le XIXe siècle est alors l’âge d’or du jeu de dames "à la polonaise" en France. Les joueurs français sont les plus suivis, de nouveaux traités paraissent.
+          </p>
+        </article>
+      </div>
+      <div class="type_partie3">
+        <article>
+          <p>
+            Les cercles de damistes se multiplient et,<strong> en 1909, naît une Fédération des Damistes Français, ancêtre de l’actuelle Fédération Française de Jeu de Dames, fondée en mai 1937.</br>
+            En 1947, Hollandais et Français jettent les bases d’une Fédération Mondiale du Jeu de Dames (FMJD) qui promeut le jeu à 100 cases.</strong></br>
+            Ce dernier, aujourd’hui qualifié d’international, est pratiqué en France, en Belgique, aux Pays-Bas, dans les pays africains francophones, en Russie et dans les anciennes républiques de l’ex-URSS, ainsi qu’au Brésil, mais il reste inconnu des pays anglo-saxons et hispanophones.</br>
+            Quant à l’Asie orientale, elle ignore tout des dames. Internationales ou non...
+          </p>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

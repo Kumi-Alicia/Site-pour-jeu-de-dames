@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Cormorant+Garamond:wght@600;700&family=Playfair+Display+SC:wght@900&family=Syne&display=swap'); 
+
+*{
+  font-family: 'Syne',serif;
+  margin:0;
+}
+/*haut de page*/
+section.top-page{
+  background-color: #AAC6DF;
+  height: 100px;
+}
+header{
+background-color: #aac0d3;
+opacity:0.8;
+display: flex;
+align-items: center;
+position: fixed;
+left: 0;
+right: 0;
+top: 0;
+border-bottom:3px solid white;
+}
+nav{
+  display:flex;
+  height: 100px;
+  margin:auto;
+  align-items: center;
+}
+nav li{
+  list-style: none;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+nav a{
+  font-size:30px;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+}
+nav a:hover{
+  color:black;
+  transition: 1s;
+}
+.landing-page{
+  background-color: #AAC6DF;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.landing-page article{
+  font-size: 22px;
+  margin-right: 100px;
+  padding-top: 250px;
+}
+.landing-page h1{
+  font-size: 55px;
+  color: white;
+  font-family: 'Cinzel', serif;
+}
+.landing-page p{
+  color: white;
+}
+.landing-page img{
+  width: 600px;
+  border: 3px solid white;
+}
+/*------------*/
+h1{
+  font-size: 55px;
+  font-family: 'Cinzel', serif;
+  margin-bottom: 10px;
+}
+p,li{
+  color:black;
+  font-size: 18px;
+}
+h2{
+  font-family: 'Cinzel', serif;
+}
+
+.type_partie2{
+  margin-top: 100px;
+}
+.type_partie2 aside{
+  float:left;
+  width: 35%;
+}
+.type_partie2 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.type_partie2 article{
+  background-color: #f2f7fa;
+  margin-left: 30%;
+  padding:50px;
+  text-align:justify;
+}
+
+.type_partie1{
+  margin-top: 100px;
+}
+.type_partie1 article{
+  background-color: #f2f7fa;
+  margin-right:30%;
+  padding:50px;
+  text-align:justify;
+}
+.type_partie1 aside{
+  float:right;
+  width: 35%;
+}
+.type_partie1 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.type_partie3{
+  margin-top: 100px;
+}
+.type_partie3 article{
+  background-color: #f2f7fa;
+  padding:50px;
+  text-align:justify;
+  margin-left:5%;
+  margin-right:5%;
+}
+form{
+  margin: 2%;
+}
+form legend{
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Cinzel', serif;
+}
+form label{
+  font-size:20px ;
+}
