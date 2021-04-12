@@ -45,7 +45,7 @@ nav a:hover{
 }
 .landing-page{
   background-color: #AAC6DF;
-  height: 600px;
+  height: 700px;
 }
 .landing-page article{
   font-size: 22px;
@@ -128,6 +128,23 @@ h2{
   margin-top: 100px;
 }
 .type_partie3 article{
+  background-color: #f2f7fa;
+  padding:50px;
+  text-align:justify;
+  margin-left:5%;
+  margin-right:5%;
+}
+.type_partie4{
+  margin-top: 100px;
+}
+.type_partie4 img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.type_partie4 article{
   background-color: #f2f7fa;
   padding:50px;
   text-align:justify;
@@ -255,7 +272,7 @@ form label{
     margin-right:auto;
   }
   .type_partie3 article{
-    width: 90%;
+  width: 90%;
   text-align: center;
   margin-left: 0;
   padding:0px;

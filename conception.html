@@ -30,12 +30,221 @@
         <img src="image/damier.png" alt="Damier du code">
       </aside>
       <article>
-        <h1>Jeu de Dames en Python</h1>
-        <p>
-            Réalisé par Alicia Ghanem et Tristan Rebeyrol</br>
-            De mars à avril 2021 dans le cadre du projet Python</br>
-            A l'Université de Champollion à Albi</br>
-        </p>
+        <h1>Conception du code</h1>
       </article>
-      
+      </div>
+      <div class="type_partie3">
+          <article>
+            <h1>Les trois parties</h1>
+            <p>
+              Pour structurer notre code, il fallait qu'on sépare notre code en trois parties distinctes:</br>
+            </p></br>
+            <h2>Le fichier jeu.py :</h2>
+            <p>
+              Ce ficher est le programme principal du code.</br>
+              Il contient la déclaration des variables globales et les différents fonctions qui permettent le déroulement du jeu.</br>
+              Ces fonctions sont appelés à partir des fichiers data.py et ihm.py.</br>
+              C'est donc ici qu'on s'occupe de la capture des événements et du placement des boutons qui seront utiliser dans les fonctions.</br>
+            </p></br>
+            <h2>Le fichier Ihm.py</h2>
+            <p>
+              Ce fichier contiendra toutes les fonctions et procédures modifiant la partie graphique de l'application.</br>
+              Les fonctions mettent en place le plateau du jeu avec le placement des pions et qui mettent en place l'état du plateau(déplacement des pions, disparitions des pions capturés,etc.).</br>
+            </p></br>
+            <h2>Le fichier data.py</h2>
+            <p>
+              Ce fichier contient les fonctions qui modifient les variables globales.</br>
+              Les fonctions correspondant aux réactions des évènements(fonctions appelés lors d'un clic de souris par exemple).</br>
+              Des fonctions qui vont gérer l'état du jeu, à chaque modifiction de l'état du jeu, il y aura un appel d'une ou plusieurs fonctions situés dans le fichier IHM.py.
+            </p>
+          </article>
+      </div>
+      <div class="type_partie4">
+        <aside>
+          <img src="image/variableglob.png" alt="Image des variables globales">
+        </aside>
+        <article>
+          <p>
+            Pour commencer, quand on allume le programme, les variables globales s'initialisent.</br></br>
+            <strong>Case</strong> : variable int permettant de définir la taille d'une case du plateau</br>
+            <strong>Space</strong> : variable int permettant de définir l'espacement entre le pion et le bord de la Case.</br>
+            <strong>Couleur</strong> : variable String permettant de définir si c'est au tour des blancs ou des noirs.</br>
+            <strong>IA</strong> : variable boolean permettant de savoir si l'IA est activée ou non.</br>
+            <strong>ls et cs</strong> : variable int permettant de savoir la position du pion qui risque de se faire souffler.</br>
+            <strong>dp</strong> : variable int permettant de savoir si il n'y a eu aucun déplacement (dp=0), si un pion s'est déplacé (dp=1) ou si un pion à effectuer une prise (dp=2). </br>
+            <strong>l1 et c1</strong> : variable int permettant de connaître la ligne et la colonne du pion séléctionné.</br>
+            <strong>l2 et c2</strong> : variable int permettant de connaître la ligne et la colonne de la position où l'on souhaite déplacer le pion.</br>
+            <strong>l_aprendre et c_aprendre</strong> : variable int permettant de connaître le pion qui doit se faire prendre en priorité.
+          </p>
+        </article>
+        <aside>
+          <img src="image/main.png" alt="image du main du code">
+        </aside>
+        <article>
+          <p>
+            Maintenant, c'est au tour du plateau initial de se créer. Avec le fonction matrice_plateau_ini().</br>
+          </p>
+        </article>
+        <aside>
+          <img src="image/matriceini.png" alt="image de la fonction matriceini">
+        </aside>
+        <article>
+          <p>
+            Dans cette fonction, on commence par créer une matrice 10x10 contenant que des zéros.</br>
+            Ensuite, on remplira cette matrice par des nombres correspondant à différentes situations.</br>
+            Un 1 correspond à une case vide noire.</br>
+            Un 0 correspond à une case vide blanche donc non jouable.</br>
+            Un 110 correspond à une case noire avec un pion noir dessus.</br>
+            Un 111 correspond à une case noire avec une dame noire dessus.</br>
+            Un 120 correspond à une case noire avec un pion blanc dessus.</br>
+            Un 121 correspond à une case noire avec une dame blanche dessus.</br>
+          </br>
+          Ensuite, on affichera cette matrice avec la fonction affichage_plateau() pour que le plateau soit visible avec la position des pions.
+          Ensuite, on aura événements qui s'effectueront lors d'un clic droit ou gauche ou lors de l'appui d'un bouton.</br>
+          </p>
+        </article>
+        <aside>
+          <img src="image/selecpion.png" alt="fonction Détection du pion sélectionné">
+        </aside>
+        <article>
+          <h2>Detection du pion sélectionné</h2></br>
+          <p>
+            Tout d'abord, pour séléctionner un pion, le joueur doit faire un clic gauche sur le pion qu'il souhaite séléctionner.</br>
+            Lors d'un clic gauche, la fonction detection_pions est activé car il y a un événement clic gauche.</br>
+
+            Si le joueur n'a fait aucun déplacement (dp=0), alors la fonction pion_soufflable va détecter si un pion peut être soufflé. 
+          </p>
+        </article>
+        <aside>
+          <img src="image/pion_soufflable.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Dans cette fonction, on va parcourir tout le plateau. Pour les pions, on va tester si il y a un pion adverse ou une dame dans ses diagonales et si il y en a un, on vérifie que une case après ce pion adverse il y a une case vide.
+            Si cette condition est remplit, alors on renvoit la position du pion qui peut être soufflé et la position du pion qui devra être pris.</br>
+          </p>
+        </article>
+        <aside>
+          <img src="image/pion_soufflable2.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Dans la même fonction, si on trouve une dame alliée, on va vérifier que dans ces diagonales si il y a un pion ou une dame adverse. Si c'est le cas, on regarde si sur la case d'après il y a une case vide.</br>
+            Dans ce cas la, on renvoit comme précédemment la position du pion à souffler et la position du pion qui doit être pris.
+            Pour chaque diagonale, on vérifie que l'on soit bien à deux cases des bordures du plateau.</br></br>
+          </p>
+          <p>
+            Si cette fonction nous renvoit une liste avec les différentes valeurs, alors on va attribuer ces valeurs à ls, cs, l_aprendre et c_aprendre.</br>
+            Maintenant, on attribut à l1 et c1 la position du pion séléctionné.</br>
+            Si jamais, on avait déjà effectuer une prise de pion (dp=2), alors l1 et c1 aurait pris la valeur de l'endroit où le pion avait été déplacé. </br></br>
+            Pour finir, avec la fonction afficher_jeton_selec, on va créer un cercle autour du pion sélectionné pour préciser celui que le joueur à séléctionner.
+          </p>
+        </article>
+        <aside>
+          <img src="image/pion_depla.png" alt="">
+        </aside>
+        <article>
+          <h2>Déplacement du pion séléctionné</h2></br>
+          <p>
+            Pour commencer, pour déplacer son pion, le joueur va faire un clic droit là où il souhaite se déplacer.</br>
+            On récupère donc la position de son clic pour situer sur la matrice l'endroit où il souhaite se déplacer.</br>
+            Si le pion ne s'est pas déplacé ou si il a effectué une prise, alors il est autorisé à rejouer. On appelle la fonction choix_déplacement.
+          </p>
+        </article>
+        <aside>
+          <img src="image/pion_depla2.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Selon le joueur actuel, on appelera deux fonctions permettant de vérifier si le déplacement est autorisé.</br>
+            Si le joueur à séléctionner un pion, alors on appelle la fonction deplacement_possible_pion.
+          </p>
+        </article>
+        <aside>
+          <img src="image/pion_depla3.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Si le joueur n'a pas fait de déplacement simple (sans prise de pion, dp=0),
+            alors il est autorisé à se déplacer. Il peut donc faire appel à la fonction deplacement_classic_pion qui vérifiera si la case où il veut se déplacer est à une case de lui et si celle-ci est vide.
+            Si c'est le cas, le déplacement s'effectuera et dp prendra la valeur 1.</br></br>
+            Maintenant, si le joueur souhaite faire une prise de pion, on vérifira si la case où il souhaite se déplacer est libre, si elle est à deux cases du pion sélectionné et si le pion qu'il veut prendre est bien un pion adverse.</br>
+            Bien évidemment, il ne doit pas avoir effectuer de déplacement avant ça.</br></br>
+          </p>
+          <p>
+            Pour finir, à la fin d'un déplacement, qu'il soit valide ou non, on vérifie avec la fonction gagnant, si un joueur à gagner ou non.</br>
+            Si il est gagnant, une fênetre pop-up apparait avec le nom du vainqueur.
+          </p>
+        </article>
+        <aside>
+          <img src="image/changement_joueur.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Le bouton pour changer de joueur est activable que si un joueur à effectuer un déplacement ou si il a fait une prise de pion.</br>
+            Si c'est le cas, alors on appelle la fonction enlever_pion_soufflable.
+          </p>
+        </article>
+        <aside>
+          <img src="image/changement_joueur2.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Avec cette fonction, on commence par vérifier que ls et cs ont la valeur d'un pion du plateau.
+            Si c'est le cas, alors on regarde si le pion qui devait être soufflé est toujours à sa position iniatial et si le pion qui devait être pris est toujours à sa position iniatial. Si cette condition est remplie, alors le pion à souffler se fait souffler.</br>
+          </br>Si le pion à souffler s'est déplacé mais que le pion à prendre n'a pas été pris alors on regarde dans la diagonale où il pouvait se déplacer et on le souffle.</br>
+            Dans notre code, les dames peuvent se faire souffler seulement si elles ne se sont pas déplacer. Il faudrait régler ceci plus tard. 
+          </br></br>
+          </p>
+          <p>
+            Une fois cette étape faite, on change de joueur et on remets dp à 0.</br>
+            A la fin d'un tour, avec la fonction devenir_dame on parcourt le plateau est si un pion est en bout de ligne adverse, on le fait devenir une dame en passant sa valeur à 111 ou 121.
+          </br></br>
+          Si l'IA est activée, on procède à son tour avec la fonction gestionIA. Après celle-ci, on passera au joueur suivant.
+          </p>
+        </article>
+        <aside>
+          <img src="image/IA.png" alt="">
+        </aside>
+        <article>
+          <h2>IA</h2>
+          <p>
+            Quand l'IA commence son tour, une boucle démarre et tant que le tour n'est pas fini elle continue.</br>
+            Si l'IA n'a effectué aucun déplacement, alors il utilise la fonction du pion soufflé pour trouver quelle pion elle va jouer.</br>
+            Si la fonction lui renvoit une liste non vide, alors l1 et c1 prendront la valeur du pion soufflé. Ensuite, on appelle la fonction prise_IA dans laquelle on rentrera en paramètre le pion sélectionné et le pion à prendre.</br>
+          </p>
+        </article>
+        <aside>
+            <img src="image/IA2.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Dans la fonction prise_IA, on effectue la prise du pion. Grâce aux coordonnées récupérées en paramètres, on peut savoir dans quelle diagonale se situe la prise de pion et ainsi faire la prise.
+          </br></br>Si on ne peut effectuer de prise, donc que pion_soufflable n'a renvoyé aucune liste et que aucun déplacement n'a été fait, alors on génère une séléction de pion aléatoire.</br>
+          Si c'est un pion, alors on utilise la fonction deplacement_IA_pion.
+          </p>
+        </article>
+        <aside>
+          <img src="image/IA3.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Dans cette fonction, on regarde si dans les diagonales où le pion peut se déplacer si la case est libre ou non. Si c'est le cas, alors on déplace le pion et dp prend la valeur 1.</br>
+          </p>
+        </article>
+        <aside>
+          <img src="image/IA4.png" alt="">
+        </aside>
+        <article>
+          <p>
+            Si c'est une dame, alors on appelle la fonction deplacement_IA_dame.</br>
+            Dans cette fonction, on regarde où est situé la dame séléctionnée. Selon sa position, on regarde les diagonales où elle peut se déplacer.</br>
+            Tant qu'on ne trouve pas de pion adverse ou allié, elle peut choisir de se déplacer à la postion actuelle observée, on utilise un randrange pour ça. Si on a un 1, alors la dame se déplace sinon elle ne fait rien.</br>
+            Si jamais, elle ne s'est pas déplacé durant le parcours de la diagonale alors elle se déplace à la dernière position où elle peut se déplacer.</br></br>
+            Une fois le déplacement fait, on mets à jour le plateau.</br>
+            Si le pion s'est déplacé ou si une prise a été faite et qu'elle n'y a plus de prise possible alors le tour prend fin.</br></br>
+
+            Après le tour de l'IA, on revérifie si il y a un gagnant et si ce n'est pas le cas, c'est au tour du joueur de jouer.
+          </p>
+        </article>
       </div>
